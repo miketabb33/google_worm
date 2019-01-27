@@ -78,9 +78,10 @@ The first goal was to remove the database and unnecessary directories from the a
 The old rails app was split as I attempted to backtrack to an earlier commit point. The 2 old app repositories can be seen here https://github.com/miketabb33/google-worm and here https://github.com/miketabb33/google_worm.
 
 
-### User Review 
+### User Experiance Improvements
 
-The next goal was to address each user review bulletin.
+The next goal was to address each bullet in the user review could use improvement section.
 
-1.There are some warnings in the console.
+1. There are some warnings in the console.
+
 The warnings were caused by the ajax request loading http images in a https website resulting in mixed content. To fix this, the json validation code for thumbnails has been modified to turn any http protocol to the https protocol before making the request.
