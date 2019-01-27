@@ -17,7 +17,7 @@ function validateAuthors(item, itemObj, resultsObj){
 function validatesThumbnail(item, itemObj){
   if(item.volumeInfo && item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail && item.volumeInfo.imageLinks.thumbnail !== undefined){
     link = item.volumeInfo.imageLinks.thumbnail
-    if(link.substring(4,5) !== 's') {
+    if(link.substring(0,4) === 'http' && link.substring(4,5) !== 's') {
       protocol = link.substring(0,4)
       url = link.substring(4, link.length)
       itemObj.thumbnail = protocol+'s'+ url

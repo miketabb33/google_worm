@@ -71,9 +71,16 @@ The goal of the Google Books API project was to make a professional grade search
 
 This section of the readme is intended to cover the implimentaion of the code review.
 
-### Removing the cruft
+### Removing the Cruft
 
 The first goal was to remove the database and unnecessary directories from the application. This proved to be difficult as config and directory changes worked locally but not when the app was deployed to heroku. Heroku returned a 503 error, there must have been some config option that was unable to be identified. The rails/all line in config/application was changed to outline specific frameworks (excluding active-record and active-storage), the sqlite3 gem and pg gem was removed from the gemfile, and every mention of active-storage and active-record was removed from the config/envirnments folder. After many attempts to fix the 503 error, the decision was made to create a new rails app without active-record, active-mailer, active-jobs, etc. and to bring in the code from the old app. This solved the 503 error. 
 
 The old rails app was split as I attempted to backtrack to an earlier commit point. The 2 old app repositories can be seen here https://github.com/miketabb33/google-worm and here https://github.com/miketabb33/google_worm.
 
+
+### User Review 
+
+The next goal was to address each user review bulletin.
+
+1.There are some warnings in the console.
+The warnings were caused by the ajax request loading http images in a https website resulting in mixed content. To fix this, the json validation code for thumbnails has been modified to turn any http protocol to the https protocol before making the request.
