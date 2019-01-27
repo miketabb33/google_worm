@@ -91,7 +91,11 @@ function validatesLink(item, itemObj){
 function validatesAmazon(item, itemObj){
   if(item.volumeInfo && item.volumeInfo.industryIdentifiers && item.volumeInfo.industryIdentifiers !== undefined){
     code = getISBN13Link(item)
-    itemObj.amazon = '<a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords='+code+'" target="_blank" class="link-list-item">Amazon</a>'
+    if(code !== ''){
+      itemObj.amazon = '<a href="https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords='+code+'" target="_blank" class="link-list-item">Amazon</a>'
+    }else{
+      itemObj.amazon = ''
+    }
   }else{
     itemObj.amazon = ''
   }
