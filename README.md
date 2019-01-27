@@ -1,24 +1,77 @@
-# README
+# Google Worm
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Google Worm is an application that uses the Google Books API to allow the user to search for books. The search results can include book title, author, publisher, pages, subject, a brief description, and external links. The user is able to load more results by scrolling to the bottom of the page. 
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* System dependencies
+### Prerequisites
+The application uses:
+ruby 2.4.1,  
+rails 5.2.2,  
 
-* Configuration
+### Installing
+Start by navigating to the project in your command line.
 
-* Database creation
+Install the required gems with:
+```
+$ bundler install
+```
+If you dont have bundler installed then install bundler gem with:
 
-* Database initialization
+```
+$ gem install bundler
+```
 
-* How to run the test suite
+Now, run the server
+```
+$ rails server
+```
+After the server is running enter the following URL into a browser window:
+```
+http://localhost:3000/
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Or use the deployed application
+Visit this link to use the app online:
 
-* Deployment instructions
+```
+https://google-worm2.herokuapp.com/
+```
 
-* ...
+## Running the tests
+
+Unit tests are handled by Jasmine. To view the unit tests enter this URL while the server is running.
+```
+http://localhost:3000/specs
+```
+
+To run integration tests, enter the following in to the console:
+
+```
+$ cucumber
+```
+## Viewing the Code
+The application code is located in:
+```
+app/assets/javascripts
+```
+Take a look at
+```
+app/assets/javascripts/application.js
+```
+to see how the code flows.
+
+## Approach
+
+The goal of the Google Books API project was to make a professional grade search tool that handles all edge cases with feedback and provides intuitive navigation for the user. The first step was to make a search bar to pass a query to the ajax requests URL parameter. On success, the ajax request returned json containing an item array with multiple indexes which was ultimately used to render listings. In the early stages of the project I only pulled thumbnail, title, and author. This is were I came across a couple edge cases, some item array index properties in the json were undefined or the property didn't exist. This stopped the ajax request and returned an error. So I did a hasOwnProperty check followed by an if undefined check. At this point, the ajax request was able to handle properties that didn't exist or that were undefined. Simultaneously, I added error handling for the ajax request. This was pretty straight forward as I eventually added the common 403 error with feedback, 0 or 408 error(timeout error) with feedback, and an everything else error with feedback. I was able to find common errors by using the app. During the last 2 weeks I was also adding/modifying CSS, HTML, HTML item rendering for each json item result, a pagination feature which I decided to turned into an infinite scroll, and a suggestions feature.    
+
+## Implimenting the review
+
+This section of the readme is intended to cover the implimentaion of the code review.
+
+### Removing the cruft
+
+The first goal was to remove the database and unnecessary directories from the application. This proved to be difficult as config and directory changes worked locally but not when the app was deployed to heroku. Heroku returned a 503 error, there must have been some config option that was unable to be identified. After many attempts to fix the 503 error, the decision was made to create a new rails app without active-record, active-mailer, active-jobs, etc. and to bring in the code from the old app. This solved the 503 error. \* The old rails app was split as I attempted to backtrack to an earlier commit point. The 2 old app repositories can be seen here https://github.com/miketabb33/google-worm and here https://github.com/miketabb33/google_worm.
+
