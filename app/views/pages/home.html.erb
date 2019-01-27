@@ -1,1 +1,24 @@
-<h1>sup dawg</h1>
+<div class="container">
+  <button type="button" id="toTopBtn" class="btn btn-primary">Back to top</button>
+
+  <div id="header">
+    <header>Google Worm</header>
+    <div id="search-container">
+      <div class="input-group" id="search-bar">
+        <input id="search-field" type="text" placeholder="Search...">
+        <div class="input-group-append" id="search-button-container">
+          <button type="button" id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+      <div id="suggestions"></div>
+    </div>
+  </div>
+
+  <div id="results-count-container">
+    About <span id="total-count"></span> results
+  </div>
+  <div id="results-container"></div>
+  <div id="loading-more"></div>
+
+  <span id="error-msg"></span>
+</div>
