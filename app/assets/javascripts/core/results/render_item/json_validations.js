@@ -16,7 +16,15 @@ function validateAuthors(item, itemObj, resultsObj){
 
 function validatesThumbnail(item, itemObj){
   if(item.volumeInfo && item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.thumbnail && item.volumeInfo.imageLinks.thumbnail !== undefined){
-    itemObj.thumbnail = item.volumeInfo.imageLinks.thumbnail
+    link = item.volumeInfo.imageLinks.thumbnail
+    if(link.substring(4,5) !== 's') {
+      protocol = link.substring(0,4)
+      url = link.substring(4, link.length)
+      itemObj.thumbnail = protocol+'s'+ url
+    }else{
+      itemObj.thumbnail = link
+    }
+
   }else{
     itemObj.thumbnail = "https://i.ibb.co/mTrb5b2/no-cover-thumb.gif"
   }
