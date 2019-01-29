@@ -22,9 +22,11 @@ function resultsErrorVisualHandler(xhr){
 
 function errorMessageHandler(xhr){
   if(xhr.status === 403){
-    $("#error-msg").html("Error: "+xhr.status+"<br>Too many requests to the server, please wait 1 minute before submitting another request")
-  }else if(xhr.status === 0 || xhr.status === 408){
-    $("#error-msg").html("Error: "+xhr.status+"<br>Request has timed out<br><a href='https://www.lifewire.com/408-request-timeout-2622937' target='_blank'>Click here for more information</a>")
+    errorInfo = JSON.parse(xhr.responseText)
+    console.log("Additional error information: ",errorInfo)
+    $("#error-msg").html("Error "+xhr.status+": "+errorInfo.error.errors[0].reason+"<br>There have been to many requests. Please try again later")
+  }else if(xhr.status === 408){
+    $("#error-msg").html("Error "+xhr.status+":<br>Request has timed out<br><a href='https://www.lifewire.com/408-request-timeout-2622937' target='_blank'>Click here for more information</a>")
   }else{
     $("#error-msg").html("Loading Error, Please try again.<br> If this continues make sure you are connected to the internet<br>Error: "+xhr.status)
   }

@@ -31,7 +31,7 @@ function runSearch(resultsObj){
         resultsErrorVisualHandler(xhr)
         $('#loading-more').hide()
       },
-      timeout: 3000
+      timeout: 4000
     });
     resultsCountIncrementor(resultsObj)
   }

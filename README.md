@@ -88,7 +88,7 @@ The warnings were caused by the ajax request loading http images in a https webs
 
 2. Getting rate limited on almost every search because of the type-ahead requests.
 
-I looked over the google books api documents for a way to increase the short term rate limit but was not able to find the information to do so. The type-ahead search was fun to build but the decision was made to remove the feature because it interfered with the core purpose of the app.   
+As per console.developers' google books api, the daily quota limit for this app is 1,000. There is also a 100 quota limit for every minute. The type-ahead search was fun to build but the decision was made to remove the feature because it added extra requests which interfered with the core purpose of the app.   
 
 3. Errors in the console after deleting a query and typing a new one. 
 
@@ -97,6 +97,8 @@ I deleted a query and typed a new one many times and didnt see any errors in the
 
 
 ### Other Additions
+
+A partial response was added to only return JSON information that is used by the app.
 
 A google key was added to each query so that app queries can be monitored.
 

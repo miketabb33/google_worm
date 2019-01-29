@@ -1,8 +1,8 @@
-function validateTitle(item, itemObj, resultsObj){ 
+function validateTitle(item){ 
   if(item.volumeInfo && item.volumeInfo.title && item.volumeInfo.title !== undefined){
-    itemObj.title = stringMaxLength(item.volumeInfo.title,resultsObj.titleCharLength)
+    return item.volumeInfo.title
   }else{
-    itemObj.title = "Unkown Title"
+    return "Unkown Title"
   }
 }
 

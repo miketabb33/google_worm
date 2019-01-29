@@ -1,13 +1,14 @@
 function handleResponse(response, resultsObj) {
   var itemObj = {}
   if (!response.hasOwnProperty('items')){
-    $('#loading-more').html("No more results")
+    $('#loading-more').html("No more results<br>Perform another search by clicking 'Back to top' and make another query.")
   }else{
     currentIndexIncrementor(resultsObj)
     for (var i = 0; i < response.items.length; i++) {
       var item = response.items[i];
       
-      validateTitle(item, itemObj, resultsObj)
+      itemObj.rawTitle = validateTitle(item)
+      itemObj.title = stringMaxLength(itemObj.rawTitle,resultsObj.titleCharLength)
       validateAuthors(item, itemObj, resultsObj)
       validatesThumbnail(item, itemObj)
       validatesPublisher(item, itemObj, resultsObj)
@@ -19,7 +20,6 @@ function handleResponse(response, resultsObj) {
       validatesAmazon(item, itemObj)
       validatesPreviewLink(item, itemObj)
       itemObj.linkListHTML = createLinkList(itemObj.amazon, itemObj.previewLink, itemObj.moreInfo)
-      itemObj.rawTitle = item.volumeInfo.title
 
       renderResultItemHTML(itemObj, resultsObj)
     }
