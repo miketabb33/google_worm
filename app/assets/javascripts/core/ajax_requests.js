@@ -3,8 +3,10 @@ function runSearch(resultsObj){
   if(search !== ""){
     
     loadingPhraseHandler(resultsObj)
+    url = "https://www.googleapis.com/books/v1/volumes?q="+ search+"&startIndex="+resultsObj.startIndex+"&maxResults="+ resultsObj.perPage
+    url += '&key=AIzaSyAsc5JqPrBK-ojHcB06PzsSlIeUc3lZy1E'
     $.ajax({
-      url: "https://www.googleapis.com/books/v1/volumes?q="+ search+"&startIndex="+resultsObj.startIndex+"&maxResults="+ resultsObj.perPage,   
+      url: url,   
       beforeSend: function(){
         LoadingPhraseOnErrorHandler(resultsObj)
         resultsObj.error = false

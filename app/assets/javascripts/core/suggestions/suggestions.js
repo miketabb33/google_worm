@@ -9,9 +9,19 @@ function handleSuggestions(result, search, suggestionsObj, resultsObj){
 }
 
 function createSuggestionsList(result, suggestionsObj){
-  for (i = 0; i< suggestionsObj.count; i++){
-    item = stringMaxLength(result.items[i].volumeInfo.title,suggestionsObj.charLength)
-    suggestionsObj.current.push(item)
+  if(result.items !== undefined){
+    arr = []
+    for (j=0;j<result.items.length;j++){
+      arr.push(result.items[j])
+    }
+    if(arr.length> suggestionsObj.count){
+      arr = arr.slice(0,suggestionsObj.count)
+    }
+    console.log(arr)
+    for (i = 0; i< arr.length; i++){
+      item = stringMaxLength(arr[i].volumeInfo.title,suggestionsObj.charLength)
+      suggestionsObj.current.push(item)
+    }
   }
 }
 
