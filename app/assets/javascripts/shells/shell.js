@@ -1,4 +1,4 @@
-function shells(results, suggestions){
+function shells(results){
 
   $('#search-button').on("click", function(){
     resetSearchConditions(results)
@@ -7,7 +7,6 @@ function shells(results, suggestions){
   })
 
   $('#search-field').on("keyup", function(event){
-    runSuggestions(suggestions, results)
     pressEnterKey(event, results)
   });
 
@@ -16,7 +15,6 @@ function shells(results, suggestions){
   })
 
   $(window).scroll(function() {
-    $('#suggestions').hide()
     toTopBtn()
     loadMoreResults(results)
   });

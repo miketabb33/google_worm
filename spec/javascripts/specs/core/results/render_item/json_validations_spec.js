@@ -46,7 +46,7 @@ describe('---JSON VALIDATIONS---', function(){
   describe('validatesThumbnail()', function(){
     it("Should return item.volumeInfo.imageLinks.thumbnail if property 'exists' and is not 'undefined'", function(){
       validatesThumbnail(item, itemObj)
-      expect(itemObj.thumbnail).toEqual("http://books.google.com/books/content?id=5wBQEp6ruIAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
+      expect(itemObj.thumbnail).toEqual("https://books.google.com/books/content?id=5wBQEp6ruIAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")
     })
 
     it("Should return a generic thumbnail if property 'exists' but is 'undefined'", function(){

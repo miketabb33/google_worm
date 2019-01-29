@@ -12,10 +12,5 @@ $(document).ready(function(){
     counter: 0
   }
 
-  var suggestions = {
-    count: 6,
-    charLength: 30
-  }
-
-  shells(results, suggestions)
+  shells(results)
 })

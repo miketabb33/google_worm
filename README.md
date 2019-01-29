@@ -85,3 +85,11 @@ The next goal was to address each bullet in the user review could use improvemen
 1. There are some warnings in the console.
 
 The warnings were caused by the ajax request loading http images in a https website resulting in mixed content. To fix this, the json validation code for thumbnails has been modified to turn any http protocol to the https protocol before making the request.
+
+2. Getting rate limited on almost every search because of the type-ahead requests.
+
+I looked over the google books api documents for a way to increase the short term rate limit but was not able to find the information to do so. The type-ahead search was fun to build but the decision was made to remove the feature because it interfered with the core purpose of the app.   
+
+
+
+

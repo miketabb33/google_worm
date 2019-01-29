@@ -73,40 +73,6 @@ button{
   background-color: #eeeeee;
 }
 
-#suggestions{
-  background-color: white;
-  margin: auto;
-  top: 41px;
-  position:absolute;
-  border: 2px #eeeeee solid;
-  border-right-color: #d1d1d1;
-  width: 50%;
-  box-shadow: 0 2px 4px gray;
-  border-radius: 0 0 10px 10px;
-  display: none;
-  z-index: 10;
-}
-
-.suggestIcon{
-  margin-right: 10px;
-  margin-left: 10px;
-  font-size: 0.7em;
-}
-
-#your-search-suggestion{
-  font-size: 12px;
-  color: gray;
-}
-
-.suggestedItem{
-  padding: 5px;
-}
-
-.suggestedItem:hover{
-  background-color: #eeeeee;
-  cursor: pointer;
-}
-
 
 /* Error Message */
 

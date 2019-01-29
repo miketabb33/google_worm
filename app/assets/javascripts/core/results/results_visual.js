@@ -34,7 +34,6 @@ function visualPageLoadingState(){
   $("#results-container").html("")
   $('#results-count-container').hide()
   $('#loading-more').hide()
-  $('#suggestions').hide()
 }
 
 function LoadingPhraseOnErrorHandler(resultsObj){
