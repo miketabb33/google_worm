@@ -3,8 +3,13 @@ function runSearch(resultsObj){
   if(search !== ""){
     
     loadingPhraseHandler(resultsObj)
-    url = "https://www.googleapis.com/books/v1/volumes?q="+ search+"&startIndex="+resultsObj.startIndex+"&maxResults="+ resultsObj.perPage
+    url = "https://www.googleapis.com/books/v1/volumes?q="
+    url += search+"&startIndex="+resultsObj.startIndex+"&maxResults="+ resultsObj.perPage
     url += '&key=AIzaSyAsc5JqPrBK-ojHcB06PzsSlIeUc3lZy1E'
+    url += '&fields=items(volumeInfo/title,volumeInfo/authors,volumeInfo/publisher,'
+    url +=   'volumeInfo/publishedDate,volumeInfo/imageLinks/thumbnail,volumeInfo/pageCount,'
+    url +=   'volumeInfo/categories,volumeInfo/industryIdentifiers,'
+    url +=   'volumeInfo/infoLink,searchInfo/textSnippet,accessInfo/webReaderLink)'
     $.ajax({
       url: url,   
       beforeSend: function(){
