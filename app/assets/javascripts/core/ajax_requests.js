@@ -17,9 +17,13 @@ function runSearch(resultsObj){
       },
       success: function(result){ 
         $('#loading-more').show()
-        handleResponse(result, resultsObj)
-        totalResultsSetter(result, resultsObj)
-        resultsShowingSwitch(resultsObj)
+        if (result.items === undefined && resultsObj.showing === false){
+          $('#loading-more').html('No results for '+ search)
+        }else{
+          handleResponse(result, resultsObj)
+          totalResultsSetter(result, resultsObj)
+          resultsShowingSwitch(resultsObj)
+        }
         resultsSuccessVisualHandler(resultsObj)
       },
       error: function(xhr, ajaxOptions, thrownError){
