@@ -96,3 +96,9 @@ I deleted a query and typed a new one many times and didnt see any errors in the
 
 
 
+### Other Additions
+
+A google key was added to each query so that app queries can be monitored.
+
+![alt text](https://i.ibb.co/413y0rG/Screen-Shot-2019-01-28-at-9-23-19-PM.png)
+
