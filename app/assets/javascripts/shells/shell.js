@@ -1,6 +1,7 @@
 function shells(results){
 
   $('#search-button').on("click", function(){
+    results.showing = false
     resetSearchConditions(results)
     visualPageLoadingState()
     runSearch(results)

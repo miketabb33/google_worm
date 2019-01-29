@@ -4,16 +4,17 @@
 describe('---RESULTS---', function(){
 
   describe('resultsShowingSwitch()', function(){
-    it("Should set resultsObj.showing to 'true' if resultsObj.showing is 'false'", function(){
+    it("Should set resultsObj.showing to 'true' if book.items is not 'undefined'", function(){
       resultsObj.showing = false
-      resultsShowingSwitch(resultsObj)
+      resultsShowingSwitch(resultsObj, book)
       expect(resultsObj.showing).toEqual(true)
     })
 
-    it("Shouldn't change resultsObj.showing if resultsObj.showing is 'true'", function(){
-      resultsObj.showing = true
-      resultsShowingSwitch(resultsObj)
-      expect(resultsObj.showing).toEqual(true)
+    it("Shouldn't change resultsObj.showing to 'true' if results.items is 'undefined", function(){ 
+      resultsObj.showing = false
+      results.items = undefined
+      resultsShowingSwitch(resultsObj, results)
+      expect(resultsObj.showing).toEqual(false)
     })
   })
 

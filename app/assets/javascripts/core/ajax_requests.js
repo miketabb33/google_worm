@@ -17,12 +17,13 @@ function runSearch(resultsObj){
       },
       success: function(result){ 
         $('#loading-more').show()
-        if (result.items === undefined && resultsObj.showing === false){
+        resultsShowingSwitch(resultsObj, result)
+        console.log(resultsObj.showing)
+        if (resultsObj.showing === false){
           $('#loading-more').html('No results for '+ search)
         }else{
           handleResponse(result, resultsObj)
           totalResultsSetter(result, resultsObj)
-          resultsShowingSwitch(resultsObj)
         }
         resultsSuccessVisualHandler(resultsObj)
       },

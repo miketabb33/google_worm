@@ -1,7 +1,7 @@
 function handleResponse(response, resultsObj) {
   var itemObj = {}
   if (!response.hasOwnProperty('items')){
-    $('#loading-more').html("No more results<br>Perform another search by clicking 'Back to top' and make another query.")
+    $('#loading-more').html("No more results")
   }else{
     currentIndexIncrementor(resultsObj)
     for (var i = 0; i < response.items.length; i++) {
@@ -23,11 +23,11 @@ function handleResponse(response, resultsObj) {
 
       renderResultItemHTML(itemObj, resultsObj)
     }
-  }
+  } 
 }
 
-function resultsShowingSwitch(resultsObj){
-  if (resultsObj.showing === false){
+function resultsShowingSwitch(resultsObj, result){
+  if (result.items !== undefined){
     resultsObj.showing = true
   }
 }

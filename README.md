@@ -92,13 +92,15 @@ As per console.developers' google books api, the daily quota limit for this app 
 
 3. Errors in the console after deleting a query and typing a new one. 
 
-I deleted a query and typed a new one many times and didnt see any errors in the console. Its worth noting that at this point I have addressed other errors, like fixing the warnings in the console and having removed the type-ahead search feature. These changes to the code may have fixed the seen error.
+I deleted a query and typed a new one many times and didnt see any errors in the console. Its worth noting that at this point other errors have been addressed, like fixing the warnings in the console and having removed the type-ahead search feature. These changes to the code may have fixed the seen error.
 
+4. Errors are handled for the most part, but not user friendly
 
+More information about each error is provided to make errors more user friendly. The additional error information comes from xhr and states the error code as well as a brief message of the cause of the error.
 
 ### Other Additions
 
-A partial response was added to only return JSON information that is used by the app.
+A partial response was added to only return JSON information that is pertinent to the app.
 
 A google key was added to each query so that app queries can be monitored.
 

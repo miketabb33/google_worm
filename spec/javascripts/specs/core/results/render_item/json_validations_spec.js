@@ -3,21 +3,21 @@ describe('---JSON VALIDATIONS---', function(){
   
   describe('validateTitle()', function(){
     it("Should return modified item.volumeInfo.title if property 'exists' and is not 'undefined'", function(){
-      validateTitle(item, itemObj, resultsObj)
-      expect(itemObj.title).toEqual("The Pragmatic Programmer")
+      title = validateTitle(item)
+      expect(title).toEqual("The Pragmatic Programmer")
     })
 
     it("Should return 'Unkown Title' if property 'exists' but is 'undefined'", function(){
       item.volumeInfo.title = undefined
-      validateTitle(item, itemObj, resultsObj)
-      expect(itemObj.title).toEqual("Unkown Title")
+      title = validateTitle(item)
+      expect(title).toEqual("Unkown Title")
       item.volumeInfo.title = "The Pragmatic Programmer"
     })
 
     it("Should return 'Unkown Title' if property dosent 'exists'", function(){
       delete item.volumeInfo.title
-      validateTitle(item, itemObj, resultsObj)
-      expect(itemObj.title).toEqual("Unkown Title")
+      title = validateTitle(item)
+      expect(title).toEqual("Unkown Title")
       item.volumeInfo.title = "The Pragmatic Programmer"
     })
   })
