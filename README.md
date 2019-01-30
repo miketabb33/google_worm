@@ -112,13 +112,6 @@ These tests can be executed by running cucumber in the console.
 $ cucumber
 ```
 
-### Other Additions
-
-A partial response was added to only return JSON information that is pertinent to the app.
-
-A Google key was added to each query so that app queries can be monitored.
-
-![alt text](https://i.ibb.co/413y0rG/Screen-Shot-2019-01-28-at-9-23-19-PM.png)
 
 ### Questions to consider
 
@@ -169,6 +162,14 @@ To implement the ability to save books and manage them we must first have the us
 ##### Save Book Search History
 Following a link to books.google.com will automatically add the books to the users browsing history. However, this is not very effective because some volume links send the user to the play store and the search information will not be recorded. A solution to this is to incorporate an application database that can store the selfLink of every book that is clicked on. A view history page can be added to the website and it can pull all selfLink rows from the database and render each listing into the DOM.
 
+
+### Other Additions
+
+A partial response was added to only return JSON information that is pertinent to the app.
+
+A Google key was added to each query so that app queries can be monitored.
+
+![alt text](https://i.ibb.co/413y0rG/Screen-Shot-2019-01-28-at-9-23-19-PM.png)
 
 
 
