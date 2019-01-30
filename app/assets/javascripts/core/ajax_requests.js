@@ -18,7 +18,6 @@ function runSearch(resultsObj){
       success: function(result){ 
         $('#loading-more').show()
         resultsShowingSwitch(resultsObj, result)
-        console.log(resultsObj.showing)
         if (resultsObj.showing === false){
           $('#loading-more').html('No results for '+ search)
         }else{
@@ -38,3 +37,4 @@ function runSearch(resultsObj){
   }
 }
 
+//uid=6Y5QXJ-cAv7J0PEPqOKjwAY
