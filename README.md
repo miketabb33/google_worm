@@ -113,7 +113,7 @@ $ cucumber
 ```
 
 
-### Questions to consider
+### Questions To Consider
 
 The last part of this review covers questions to consider
 
