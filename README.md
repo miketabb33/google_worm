@@ -67,7 +67,7 @@ to see how the code flows.
 
 The goal of the Google Books API project was to make a professional grade search tool that handles all edge cases with feedback and provides intuitive navigation for the user. The first step was to make a search bar to pass a query to the ajax requests URL parameter. On success, the ajax request returned json containing an item array with multiple indexes which was ultimately used to render listings. In the early stages of the project I only pulled thumbnail, title, and author. This is were I came across a couple edge cases, some item array index properties in the json were undefined or the property didn't exist. This stopped the ajax request and returned an error. So I did a hasOwnProperty check followed by an if undefined check. At this point, the ajax request was able to handle properties that didn't exist or that were undefined. Simultaneously, I added error handling for the ajax request. This was pretty straight forward as I eventually added the common 403 error with feedback, 0 or 408 error(timeout error) with feedback, and an everything else error with feedback. I was able to find common errors by using the app. During the last 2 weeks I was also adding/modifying CSS, HTML, HTML item rendering for each json item result, a pagination feature which I decided to turned into an infinite scroll, and a suggestions feature.    
 
-## Implimenting the review
+## Implementing the review
 
 This section of the readme is intended to cover the implementation of the code review.
 
