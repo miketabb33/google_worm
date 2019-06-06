@@ -37,7 +37,7 @@ http://localhost:3000/
 Visit this link to use the app online:
 
 ```
-https://google-worm2.herokuapp.com/
+https://google-worm.herokuapp.com/
 ```
 
 ## Running the tests
